@@ -1,6 +1,6 @@
-// You have to use async to use data fetch inside a Server component
-export default async function Fetch() {
+import { ClicksButton } from "./components/ClicksButton";
 
+export default async function ClientAndServerComp() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
   const response = await fetch("https://api.github.com/users/avilyre");
@@ -9,6 +9,8 @@ export default async function Fetch() {
   return (
     <pre>
       {githubUser}
+
+      <ClicksButton />
     </pre>
   )
 } 
